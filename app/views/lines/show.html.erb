@@ -6,22 +6,30 @@
         <div class="row">
             <div class="my-2"><%= l @day.date, format: "%A, %e %b %Y" %></div>
             <div class="col col-sm-4">
-                <table class="table">
+                <table class="table table-hover">
                   <tbody>
                     <% for index in 1..12 %>
                     <tr class="<%= class_for(status_for(@day, index)) %>">
+                        <% if Time.now.hour == index %>
+                        <td class="table-active"><%= index %></td>
+                        <% else %>
                         <td><%= index %></td>
+                        <% end %>
                     </tr>
                     <% end %>
                 </tbody>
             </table>
         </div>
         <div class="col col-sm-4">
-           <table class="table">
+           <table class="table table-hover">
               <tbody>
                 <% for index in 13..24 %>
                 <tr class="<%= class_for(status_for(@day, index)) %>">
+                    <% if Time.now.hour == index %>
+                    <td class="table-active"><%= index %></td>
+                    <% else %>
                     <td><%= index %></td>
+                    <% end %>
                 </tr>
                 <% end %>
             </tbody>
