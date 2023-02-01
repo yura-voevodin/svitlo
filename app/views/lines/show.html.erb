@@ -1,12 +1,63 @@
-<h1><%= @line.name %></h1>
+<main>
+    <div class="container px-4 py-2">
+        <h1><%= @line.name %></h1>
 
-<% if @day.present? %>
-<div><%= l @day.date, format: "%A, %e %b %Y" %></div>
-<ul>
-    <% for index in 1...24 %>
-    <%= render "hour", hour: index, status: status_for(@day, index) %>
-    <% end %>
-</ul>
+        <% if @day.present? %>
+        <div class="row">
+            <div class="my-2"><%= l @day.date, format: "%A, %e %b %Y" %></div>
+            <div class="col col-sm-4">
+                <table class="table">
+                  <tbody>
+                    <% for index in 1..12 %>
+                    <tr class="<%= class_for(status_for(@day, index)) %>">
+                        <td><%= index %></td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+        <div class="col col-sm-4">
+           <table class="table">
+              <tbody>
+                <% for index in 13..24 %>
+                <tr class="<%= class_for(status_for(@day, index)) %>">
+                    <td><%= index %></td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col col-sm-4">
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">Колір</th>
+                  <th scope="col">Значення</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="table-success" scope="col"></td>
+              <td scope="col">черга буде з електропостачанням</td>
+          </tr>
+          <tr>
+              <td class="table-warning" scope="col"></td>
+              <td scope="col">можливі вимкнення</td>
+          </tr>
+          <tr>
+              <td class="table-danger" scope="col"></td>
+              <td scope="col">черга буде вимкнена</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+</div>
+
 <% else %>
 <div>Day not found</div>
 <% end %>
+
+
+</div>
+</main>

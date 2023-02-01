@@ -51,4 +51,15 @@ module LinesHelper
             day.time24
         end
     end
+
+    def class_for(status)
+        case status
+        when 'on'
+            'table-success'
+        when 'off'
+            'table-danger'
+        when 'maybe'
+            'table-warning'
+        end
+    end
 end
