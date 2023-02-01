@@ -1,1 +1,12 @@
 <h1><%= @line.name %></h1>
+
+<% if @day.present? %>
+<div><%= l @day.date, format: "%A, %e %b %Y" %></div>
+<ul>
+    <% for index in 1...24 %>
+    <%= render "hour", hour: index, enabled: status_for(@day, index) %>
+    <% end %>
+</ul>
+<% else %>
+<div>Day not found</div>
+<% end %>
