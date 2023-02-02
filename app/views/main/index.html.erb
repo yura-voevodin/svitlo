@@ -1,6 +1,10 @@
+<% @title = "Графік вимкнень, #{I18n.l(DateTime.now, format: '%A, %e %b %Y')}, Івано-Франківськ" %>
+<% meta_tag :description, "Графік відключення світла, Івано-Франківськ" %>
+<% meta_tag :keywords, "графік, відключення, світло, івано-франківськ" %>
 <main>
     <div class="container px-4 py-2">
-        <h1>Івано-Франківськ - графік погодинних вимкнень, <%= l Date.today, format: "%A, %e %b %Y" %></h1>
+        <h1>Івано-Франківськ - графік відключення світла</h1>
+        <h2><%= l Date.today, format: "%A, %e %b %Y" %></h2>
 
         <ul>
             <% @lines.each do |line| %>
