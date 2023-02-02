@@ -1,32 +1,33 @@
 <% @title = "Графік вимкнень, #{@line.name}, #{I18n.l(DateTime.now, format: '%A, %e %b %Y')}, Івано-Франківськ" %>
 <main>
-    <div class="container px-4 py-2">
-        <h1><%= @line.name %></h1>
+  <div class="container px-4 py-2">
+    <div class="row mt-2">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to 'Головна', root_url %></li>
+          <li class="breadcrumb-item active" aria-current="page"><%= @line.name %></li>
+        </ol>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="my-2"><%= l @date, format: "%A, %e %b %Y" %></div>
+    </div>
 
-        <div class="row">
-            <div class="my-2"><%= l @date, format: "%A, %e %b %Y" %></div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <% for index in 1..12 %>
-                <%= render "layouts/row", day: @day, index: index %>
-                <% end %>
-            </div>
-            <div class="col-sm-1"></div>
-            <div class="col">
-                <% for index in 13..24 %>
-                <%= render "layouts/row", day: @day, index: index %>
-                <% end %>
-            </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-4"><%= render "layouts/info_table" %></div>
-        </div>
-
-        <div class="row mt-4">
-          <%= link_to '< Всі черги', root_url %>
+    <div class="row">
+      <div class="col">
+        <% for index in 1..12 %>
+        <%= render "layouts/row", day: @day, index: index %>
+        <% end %>
       </div>
-
+      <div class="col-sm-1"></div>
+      <div class="col">
+        <% for index in 13..24 %>
+        <%= render "layouts/row", day: @day, index: index %>
+        <% end %>
+      </div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-4"><%= render "layouts/info_table" %></div>
+    </div>
   </div>
   <%= render "layouts/footer" %>
 </main>

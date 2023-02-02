@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "main#index"
 
+  # Pages
+  get "/contacts", to: "pages#contacts"
+
   resources :lines
 end
