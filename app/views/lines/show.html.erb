@@ -38,39 +38,52 @@
                 <% end %>
             </div>
             <div class="col-sm-1"></div>
-            <div class="col-sm-4">
-                <table class="table">
-                    <thead>
-                        <tr>
-                          <th scope="col">Колір</th>
-                          <th scope="col">Значення</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                        <td class="bg-success bg-opacity-75" scope="col"></td>
-                        <td scope="col">черга буде з електропостачанням</td>
-                    </tr>
-                    <tr>
-                      <td class="bg-warning bg-opacity-75" scope="col"></td>
-                      <td scope="col">можливі вимкнення</td>
-                  </tr>
-                  <tr>
-                      <td class="bg-danger bg-opacity-75" scope="col"></td>
-                      <td scope="col">черга буде вимкнена</td>
-                  </tr>
-              </tbody>
-          </table>
-      </div>
+            <div class="col-sm-4"><%= render "layouts/info_table" %></div>
   </div>
 
   <% else %>
-  <div>Day not found</div>
-  <% end %>
+  <div class="row">
+    <div class="my-2"><%= l Date.today, format: "%A, %e %b %Y" %></div>
+</div>
 
-  <div class="row mt-4">
-      <%= link_to '< Всі черги', root_url %>
-  </div>
+<div class="row">
+    <div class="col">
+        <% for index in 1..12 %>
+        <div class="row py-1">
+            <div class="col-sm-2"><span><%= index %></span></div>
+            <div class="col rounded-3 bg-body-secondary">
+                <% if Time.now.hour == index %>
+                <hr class="border-info border-1 opacity-75">
+                <% else %>
+                <hr class="border-2 opacity-0">
+                <% end %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col">
+        <% for index in 13..24 %>
+        <div class="row py-1">
+            <div class="col-sm-2"><span><%= index %></span></div>
+            <div class="col rounded-3 bg-body-secondary">
+                <% if Time.now.hour == index %>
+                <hr class="border-info border-1 opacity-75">
+                <% else %>
+                <hr class="border-2 opacity-0">
+                <% end %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4"><%= render "layouts/info_table" %></div>
+</div>
+<% end %>
+
+<div class="row mt-4">
+  <%= link_to '< Всі черги', root_url %>
+</div>
 
 </div>
 <%= render "layouts/footer" %>
