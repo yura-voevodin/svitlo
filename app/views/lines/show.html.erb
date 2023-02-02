@@ -14,7 +14,7 @@
                     <div class="col-sm-2"><span><%= index %></span></div>
                     <div class="col rounded-3 <%= opacity_for(index) %> <%= background_class_for(status_for(@day, index)) %>">
                         <% if Time.now.hour == index %>
-                        <hr class="border-danger border-2 opacity-75">
+                        <hr class="border-info border-1 opacity-75">
                         <% else %>
                         <hr class="border-2 opacity-0">
                         <% end %>
@@ -29,7 +29,7 @@
                     <div class="col-sm-2"><span><%= index %></span></div>
                     <div class="col rounded-3 <%= opacity_for(index) %> <%= background_class_for(status_for(@day, index)) %>">
                         <% if Time.now.hour == index %>
-                        <hr class="border-danger border-2 opacity-75">
+                        <hr class="border-info border-1 opacity-75">
                         <% else %>
                         <hr class="border-2 opacity-0">
                         <% end %>
@@ -68,6 +68,9 @@
   <div>Day not found</div>
   <% end %>
 
+  <div class="row mt-4">
+      <%= link_to '< Всі черги', root_url %>
+  </div>
 
 </div>
 <%= render "layouts/footer" %>
