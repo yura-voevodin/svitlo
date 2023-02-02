@@ -1,10 +1,10 @@
-class Line60201Job < ApplicationJob
+class Line40301Job < ApplicationJob
   queue_as :default
   
   def perform(*args)
-    day = Day.where(line_id: 6, date: Date.today).first
+    day = Day.where(line_id: 4, date: Date.today).first
     if day.nil?
-      day = Day.new(date: Date.today, line_id: 6)
+      day = Day.new(date: Date.today, line_id: 4)
     end
     day.time1 = "on"
     day.time2 = "on"
@@ -14,19 +14,19 @@ class Line60201Job < ApplicationJob
     day.time6 = "on"
     day.time7 = "on"
     day.time8 = "on"
-    day.time9 = "off"
+    day.time9 = "on"
     day.time10 = "off"
     day.time11 = "off"
-    day.time12 = "on"
+    day.time12 = "off"
     day.time13 = "on"
     day.time14 = "on"
-    day.time15 = "off"
+    day.time15 = "on"
     day.time16 = "off"
     day.time17 = "off"
-    day.time18 = "maybe"
+    day.time18 = "off"
     day.time19 = "on"
     day.time20 = "on"
-    day.time21 = "off"
+    day.time21 = "on"
     day.time22 = "off"
     day.time23 = "off"
     day.time24 = "off"
