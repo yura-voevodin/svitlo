@@ -12,25 +12,22 @@
     <div class="row">
       <div class="my-2"><%= l @date, format: "%A, %e %b %Y" %></div>
     </div>
-
     <div class="row">
       <div class="col">
         <% for index in 1..12 %>
         <%= render "layouts/row", day: @day, index: index %>
         <% end %>
       </div>
-      <div class="col-sm-1"></div>
-      <div class="col">
+      <div class="col offset-1">
         <% for index in 13..24 %>
         <%= render "layouts/row", day: @day, index: index %>
         <% end %>
       </div>
-      <div class="col-sm-1"></div>
-      <div class="col-sm-4"><%= render "layouts/info_table" %></div>
+      <div class="col-sm-4 offset-1"><%= render "layouts/info_table" %></div>
     </div>
     <div class="row mt-2">
       <p class="text-muted font-weight-lighter"><small>Інформація про графіки із сайту oe.if.ua</small>
       </div>
-  </div>
-  <%= render "layouts/footer" %>
-</main>
+    </div>
+    <%= render "layouts/footer" %>
+  </main>

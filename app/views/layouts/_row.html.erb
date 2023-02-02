@@ -1,23 +1,9 @@
 <% if day.present? %>
-<div class="row py-1">
-    <div class="col-sm-2"><span><%= index %></span></div>
-    <div class="col rounded-3 <%= opacity_for(index) %> <%= background_class_for(status_for(day, index)) %>">
-        <% if Time.now.hour == index %>
-        <hr class="border-info border-1 opacity-75">
-        <% else %>
-        <hr class="border-2 opacity-0">
-        <% end %>
-    </div>
+<div class="row mt-2 <%= border_for(index) %>">
+    <div class="rounded-3 <%= opacity_for(index) %> <%= background_class_for(status_for(day, index)) %>"><%= index %></div>
 </div>
 <% else %>
-<div class="row py-1">
-    <div class="col-sm-2"><span><%= index %></span></div>
-    <div class="col rounded-3 bg-body-secondary">
-        <% if Time.now.hour == index %>
-        <hr class="border-info border-1 opacity-75">
-        <% else %>
-        <hr class="border-2 opacity-0">
-        <% end %>
-    </div>
+<div class="row mt-2 <%= border_for(index) %>">
+    <div class="rounded-3 bg-body-secondary"><%= index %></div>
 </div>
 <% end %>

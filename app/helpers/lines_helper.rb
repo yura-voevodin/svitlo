@@ -70,4 +70,12 @@ module LinesHelper
             'bg-opacity-75'
         end
     end
+
+    def border_for(time)
+        if time == Time.now.hour
+            'border border-info rounded-3'
+        else
+           '' 
+        end
+    end
 end
