@@ -5,66 +5,68 @@
         <% if @day.present? %>
         <div class="row">
             <div class="my-2"><%= l @day.date, format: "%A, %e %b %Y" %></div>
-            <div class="col col-sm-4">
-                <table class="table table-hover">
-                  <tbody>
-                    <% for index in 1..12 %>
-                    <tr class="<%= class_for(status_for(@day, index)) %>">
+
+            <div class="col">
+                <% for index in 1..12 %>
+                <div class="row py-2">
+                    <div class="col-sm-1"><span><%= index %></span></div>
+                    <div class="col rounded-3 <%= opacity_for(index) %> <%= background_class_for(status_for(@day, index)) %>">
                         <% if Time.now.hour == index %>
-                        <td class="table-active"><%= index %></td>
+                        <hr class="border-danger border-2 opacity-75">
                         <% else %>
-                        <td><%= index %></td>
+                        <hr class="border-2 opacity-0">
                         <% end %>
-                    </tr>
-                    <% end %>
-                </tbody>
-            </table>
-        </div>
-        <div class="col col-sm-4">
-           <table class="table table-hover">
-              <tbody>
-                <% for index in 13..24 %>
-                <tr class="<%= class_for(status_for(@day, index)) %>">
-                    <% if Time.now.hour == index %>
-                    <td class="table-active"><%= index %></td>
-                    <% else %>
-                    <td><%= index %></td>
-                    <% end %>
-                </tr>
+                    </div>
+                </div>
                 <% end %>
-            </tbody>
-        </table>
-    </div>
+            </div>
 
-    <div class="col col-sm-4">
-        <table class="table">
-            <thead>
-                <tr>
-                  <th scope="col">Колір</th>
-                  <th scope="col">Значення</th>
-              </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="table-success" scope="col"></td>
-              <td scope="col">черга буде з електропостачанням</td>
-          </tr>
-          <tr>
-              <td class="table-warning" scope="col"></td>
-              <td scope="col">можливі вимкнення</td>
-          </tr>
-          <tr>
-              <td class="table-danger" scope="col"></td>
-              <td scope="col">черга буде вимкнена</td>
-          </tr>
-      </tbody>
-  </table>
-</div>
-</div>
+            <div class="col">
+                <% for index in 13..24 %>
+                <div class="row py-2">
+                    <div class="col-sm-1"><span><%= index %></span></div>
+                    <div class="col rounded-3 <%= opacity_for(index) %> <%= background_class_for(status_for(@day, index)) %>">
+                        <% if Time.now.hour == index %>
+                        <hr class="border-danger border-2 opacity-75">
+                        <% else %>
+                        <hr class="border-2 opacity-0">
+                        <% end %>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
 
-<% else %>
-<div>Day not found</div>
-<% end %>
+        <div class="row">
+            <div class="col col-sm-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+                          <th scope="col">Колір</th>
+                          <th scope="col">Значення</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td class="bg-success bg-opacity-75" scope="col"></td>
+                      <td scope="col">черга буде з електропостачанням</td>
+                  </tr>
+                  <tr>
+                      <td class="bg-warning bg-opacity-75" scope="col"></td>
+                      <td scope="col">можливі вимкнення</td>
+                  </tr>
+                  <tr>
+                      <td class="bg-danger bg-opacity-75" scope="col"></td>
+                      <td scope="col">черга буде вимкнена</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+
+  <% else %>
+  <div>Day not found</div>
+  <% end %>
 
 
 </div>

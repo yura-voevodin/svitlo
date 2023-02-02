@@ -52,14 +52,22 @@ module LinesHelper
         end
     end
 
-    def class_for(status)
+    def background_class_for(status)
         case status
         when 'on'
-            'table-success'
+            'bg-success'
         when 'off'
-            'table-danger'
+            'bg-danger'
         when 'maybe'
-            'table-warning'
+            'bg-warning'
+        end
+    end
+
+    def opacity_for(hour)
+        if hour < Time.now.hour
+            'bg-opacity-25'
+        else
+            'bg-opacity-75'
         end
     end
 end
