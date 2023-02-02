@@ -2,18 +2,15 @@
 <% meta_tag :description, "Графік відключення світла, Івано-Франківськ" %>
 <% meta_tag :keywords, "графік, відключення, світло, івано-франківськ" %>
 <main>
-    <div class="container px-4 py-2">
-        <h1>Івано-Франківськ - графік відключення світла</h1>
-        <h2><%= l Date.today, format: "%A, %e %b %Y" %></h2>
-
-        <ul>
-            <% @lines.each do |line| %>
-            <li>
-                <%= link_to line.name, line %>
-            </li>
-            <% end %>
-        </ul>
-
-    </div>
-    <%= render "layouts/footer" %>
+  <div class="container px-4 py-2">
+    <h1>Івано-Франківськ - графік відключення світла</h1>
+    <h2><%= l Date.today, format: "%A, %e %b %Y" %></h2>
+    <ul>
+      <% @lines.each do |line| %>
+      <li><%= link_to line.name, line %></li>
+      <% end %>
+    </ul>
+    <p class="text-muted font-weight-lighter"><small>Інформація про графіки із сайту oe.if.ua</small></p>
+  </div>
+  <%= render "layouts/footer" %>
 </main>
