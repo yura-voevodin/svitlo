@@ -2,89 +2,30 @@
     <div class="container px-4 py-2">
         <h1><%= @line.name %></h1>
 
-        <% if @day.present? %>
         <div class="row">
-            <div class="my-2"><%= l @day.date, format: "%A, %e %b %Y" %></div>
+            <div class="my-2"><%= l @date, format: "%A, %e %b %Y" %></div>
         </div>
 
         <div class="row">
             <div class="col">
                 <% for index in 1..12 %>
-                <div class="row py-1">
-                    <div class="col-sm-2"><span><%= index %></span></div>
-                    <div class="col rounded-3 <%= opacity_for(index) %> <%= background_class_for(status_for(@day, index)) %>">
-                        <% if Time.now.hour == index %>
-                        <hr class="border-info border-1 opacity-75">
-                        <% else %>
-                        <hr class="border-2 opacity-0">
-                        <% end %>
-                    </div>
-                </div>
+                <%= render "layouts/row", day: @day, index: index %>
                 <% end %>
             </div>
             <div class="col-sm-1"></div>
             <div class="col">
                 <% for index in 13..24 %>
-                <div class="row py-1">
-                    <div class="col-sm-2"><span><%= index %></span></div>
-                    <div class="col rounded-3 <%= opacity_for(index) %> <%= background_class_for(status_for(@day, index)) %>">
-                        <% if Time.now.hour == index %>
-                        <hr class="border-info border-1 opacity-75">
-                        <% else %>
-                        <hr class="border-2 opacity-0">
-                        <% end %>
-                    </div>
-                </div>
+                <%= render "layouts/row", day: @day, index: index %>
                 <% end %>
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-4"><%= render "layouts/info_table" %></div>
+        </div>
+
+        <div class="row mt-4">
+          <%= link_to '< Всі черги', root_url %>
+      </div>
+
   </div>
-
-  <% else %>
-  <div class="row">
-    <div class="my-2"><%= l Date.today, format: "%A, %e %b %Y" %></div>
-</div>
-
-<div class="row">
-    <div class="col">
-        <% for index in 1..12 %>
-        <div class="row py-1">
-            <div class="col-sm-2"><span><%= index %></span></div>
-            <div class="col rounded-3 bg-body-secondary">
-                <% if Time.now.hour == index %>
-                <hr class="border-info border-1 opacity-75">
-                <% else %>
-                <hr class="border-2 opacity-0">
-                <% end %>
-            </div>
-        </div>
-        <% end %>
-    </div>
-    <div class="col-sm-1"></div>
-    <div class="col">
-        <% for index in 13..24 %>
-        <div class="row py-1">
-            <div class="col-sm-2"><span><%= index %></span></div>
-            <div class="col rounded-3 bg-body-secondary">
-                <% if Time.now.hour == index %>
-                <hr class="border-info border-1 opacity-75">
-                <% else %>
-                <hr class="border-2 opacity-0">
-                <% end %>
-            </div>
-        </div>
-        <% end %>
-    </div>
-    <div class="col-sm-1"></div>
-    <div class="col-sm-4"><%= render "layouts/info_table" %></div>
-</div>
-<% end %>
-
-<div class="row mt-4">
-  <%= link_to '< Всі черги', root_url %>
-</div>
-
-</div>
-<%= render "layouts/footer" %>
+  <%= render "layouts/footer" %>
 </main>
