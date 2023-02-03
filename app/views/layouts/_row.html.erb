@@ -1,6 +1,6 @@
 <% if day.present? %>
 <div class="row mt-2 <%= border_for(index) %>">
-    <div class="rounded-3 <%= opacity_for(index) %> <%= background_class_for(status_for(day, index)) %>"><%= index %></div>
+    <div class="rounded-3 <%= opacity_for(index) %> <%= background_class_for(status_for(day, index)) %>"><%= (index - 1) %> - <%= index %></div>
 </div>
 <% else %>
 <div class="row mt-2 <%= border_for(index) %>">
