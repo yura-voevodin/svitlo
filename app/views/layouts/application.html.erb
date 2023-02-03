@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="ua" data-bs-theme="dark">
   <head>
+    <% if Rails.env == 'production' %>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5X50GCXJ9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-C5X50GCXJ9');
+    </script>
+    <% end %>
     <title><%= @title %></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
