@@ -1,0 +1,1 @@
+<p>На <code><%= Time.now.strftime("%H:%M") %></code> <span class="badge rounded-pill <%= badge_background_class_for(status_for(day, Time.now.hour + 1)) %>"><%= status_text_for(day, Time.now.hour + 1) %></span></p>

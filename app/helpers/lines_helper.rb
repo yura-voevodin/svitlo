@@ -63,6 +63,17 @@ module LinesHelper
         end
     end
 
+    def badge_background_class_for(status)
+        case status
+        when 'on'
+            'text-bg-success'
+        when 'off'
+            'text-bg-danger'
+        when 'maybe'
+            'text-bg-warning'
+        end
+    end
+
     def opacity_for(hour)
         if hour < (Time.now.hour + 1)
             'bg-opacity-25'
@@ -76,6 +87,18 @@ module LinesHelper
             'border border-info rounded-3'
         else
            '' 
+        end
+    end
+
+    def status_text_for(day, hour)
+        status = status_for(day, hour)
+        case status
+        when 'on'
+            'черга з електропостачанням'
+        when 'off'
+            'черга вимкнена'
+        when 'maybe'
+            'можливі вимкнення'
         end
     end
 end

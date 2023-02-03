@@ -9,9 +9,9 @@
         </ol>
       </nav>
     </div>
-    <div class="row">
-      <div class="my-2"><%= l @date, format: "%A, %e %b %Y" %></div>
-    </div>
+    <div class="row"><div class="my-2"><span class="fw-bold"><%= l @date, format: "%A, %e %b %Y" %></span></div></div>
+    <div class="row"><%= render "layouts/text_info", day: @day %></div>
+    <hr>
     <div class="row">
       <div class="col">
         <% for index in 1..12 %>
