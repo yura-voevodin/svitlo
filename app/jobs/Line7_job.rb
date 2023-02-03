@@ -11,11 +11,11 @@ class Line71Job < ApplicationJob
     end
     
      # 0-1
-    day.time1 = "off"
+    day.time1 = "on"
     # 1-2
-    day.time2 = "off"
+    day.time2 = "on"
     # 2-3
-    day.time3 = "maybe"
+    day.time3 = "on"
     # 3-4
     day.time4 = "on"
     # 4-5
@@ -25,35 +25,35 @@ class Line71Job < ApplicationJob
     # 6-7
     day.time7 = "on"
     # 7-8
-    day.time8 = "off"
+    day.time8 = "on"
     # 8-9
     day.time9 = "off"
     # 9-10
     day.time10 = "off"
     # 10-11
-    day.time11 = "on"
+    day.time11 = "off"
     # 11-12
-    day.time12 = "on"
+    day.time12 = "off"
     # 12-13
     day.time13 = "on"
     # 13-14
-    day.time14 = "off"
+    day.time14 = "on"
     # 14-15
-    day.time15 = "off"
+    day.time15 = "on"
     # 15-16
     day.time16 = "off"
     # 16-17
-    day.time17 = "maybe"
+    day.time17 = "off"
     # 17-18
-    day.time18 = "on"
+    day.time18 = "off"
     # 18-19
-    day.time19 = "on"
+    day.time19 = "off"
     # 19-20
-    day.time20 = "off"
+    day.time20 = "on"
     # 20-21
-    day.time21 = "off"
+    day.time21 = "on"
     # 21-22
-    day.time22 = "off"
+    day.time22 = "on"
     # 22-23
     day.time23 = "on"
     # 23-24
