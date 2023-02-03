@@ -2,7 +2,7 @@ class Line2Job < ApplicationJob
   queue_as :default
   
   def perform(*args)
-    date = '03.01.2023'.to_date
+    date = args.first[:date]
     line = 2
 
     day = Day.where(line_id: line, date: date).first
