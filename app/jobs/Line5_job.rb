@@ -11,7 +11,7 @@ class Line5Job < ApplicationJob
     end
     
     # 0-1
-    day.time1 = "on"
+    day.time1 = "maybe"
     # 1-2
     day.time2 = "on"
     # 2-3
@@ -23,19 +23,19 @@ class Line5Job < ApplicationJob
     # 5-6
     day.time6 = "off"
     # 6-7
-    day.time7 = "off"
+    day.time7 = "maybe"
     # 7-8
     day.time8 = "on"
     # 8-9
     day.time9 = "on"
     # 9-10
-    day.time10 = "maybe"
+    day.time10 = "on"
     # 10-11
     day.time11 = "off"
     # 11-12
     day.time12 = "off"
     # 12-13
-    day.time13 = "off"
+    day.time13 = "maybe"
     # 13-14
     day.time14 = "on"
     # 14-15
@@ -47,9 +47,9 @@ class Line5Job < ApplicationJob
     # 17-18
     day.time18 = "off"
     # 18-19
-    day.time19 = "off"
+    day.time19 = "maybe"
     # 19-20
-    day.time20 = "maybe"
+    day.time20 = "on"
     # 20-21
     day.time21 = "on"
     # 21-22

@@ -27,31 +27,31 @@ class Line7Job < ApplicationJob
     # 7-8
     day.time8 = "on"
     # 8-9
-    day.time9 = "off"
+    day.time9 = "on"
     # 9-10
-    day.time10 = "off"
+    day.time10 = "on"
     # 10-11
     day.time11 = "off"
     # 11-12
     day.time12 = "off"
     # 12-13
-    day.time13 = "on"
+    day.time13 = "off"
     # 13-14
-    day.time14 = "on"
+    day.time14 = "off"
     # 14-15
     day.time15 = "on"
     # 15-16
-    day.time16 = "off"
+    day.time16 = "on"
     # 16-17
-    day.time17 = "off"
+    day.time17 = "on"
     # 17-18
     day.time18 = "off"
     # 18-19
     day.time19 = "off"
     # 19-20
-    day.time20 = "on"
+    day.time20 = "off"
     # 20-21
-    day.time21 = "on"
+    day.time21 = "off"
     # 21-22
     day.time22 = "on"
     # 22-23
