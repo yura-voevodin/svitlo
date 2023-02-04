@@ -10,8 +10,8 @@ class Line8Job < ApplicationJob
       day = Day.new(date: date, line_id: line)
     end
     
-    # 0-1
-    day.time1 = "off"
+     # 0-1
+    day.time1 = "on"
     # 1-2
     day.time2 = "on"
     # 2-3
@@ -29,13 +29,13 @@ class Line8Job < ApplicationJob
     # 8-9
     day.time9 = "on"
     # 9-10
-    day.time10 = "off"
+    day.time10 = "on"
     # 10-11
-    day.time11 = "off"
+    day.time11 = "on"
     # 11-12
-    day.time12 = "off"
+    day.time12 = "on"
     # 12-13
-    day.time13 = "off"
+    day.time13 = "on"
     # 13-14
     day.time14 = "on"
     # 14-15
@@ -53,11 +53,11 @@ class Line8Job < ApplicationJob
     # 20-21
     day.time21 = "on"
     # 21-22
-    day.time22 = "off"
+    day.time22 = "on"
     # 22-23
-    day.time23 = "off"
+    day.time23 = "on"
     # 23-24
-    day.time24 = "off"
+    day.time24 = "on"
     day.save
   end
   
