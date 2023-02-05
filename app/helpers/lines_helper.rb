@@ -94,7 +94,7 @@ module LinesHelper
         if time == (Time.now.hour + 1)
             'border border-info rounded-3'
         else
-           '' 
+           ''
         end
     end
 
