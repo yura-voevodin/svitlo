@@ -1,9 +1,12 @@
-<% if day.present? %>
-<div class="row mt-2 <%= border_for(index) %>">
-    <div class="rounded-3 <%= text_style_for(index) %> <%= opacity_for(index) %> <%= background_class_for(status_for(day, index)) %>"><%= (index - 1) %> - <%= index %></div>
+<div class="px-2">
+    <% if day.present? %>
+    <% status = status_for(day, index) %>
+    <div class="row mt-2 <%= border_for(index) %>">
+        <div class="rounded-3 <%= text_style_for(index) %> <%= opacity_for(index) %> <%= background_class_for(status) %>"><span><%= (index - 1) %> - <%= index %></span></div>
+    </div>
+    <% else %>
+    <div class="row mt-2 <%= border_for(index) %>">
+        <div class="rounded-3 bg-body-secondary"><%= index %></div>
+    </div>
+    <% end %>
 </div>
-<% else %>
-<div class="row mt-2 <%= border_for(index) %>">
-    <div class="rounded-3 bg-body-secondary"><%= index %></div>
-</div>
-<% end %>

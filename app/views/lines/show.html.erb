@@ -11,19 +11,17 @@
     </div>
     <div class="row"><div class="my-2"><span class="fw-bold"><%= l @date, format: "%A, %e %b %Y" %></span></div></div>
     <div class="row"><%= render "layouts/text_info", day: @day %></div>
-    <hr>
     <div class="row">
-      <div class="col">
+      <div class="col-6 col-md-3 col-lg-2">
         <% for index in 1..12 %>
         <%= render "layouts/row", day: @day, index: index %>
         <% end %>
       </div>
-      <div class="col offset-1">
+      <div class="col-6 col-md-3 col-lg-2">
         <% for index in 13..24 %>
         <%= render "layouts/row", day: @day, index: index %>
         <% end %>
       </div>
-      <div class="col-md-5"></div>
     </div>
     <div class="row mt-4"><p class="text-muted font-weight-lighter"><small>Інформація про графіки із сайту oe.if.ua</small></div>
     </div>
