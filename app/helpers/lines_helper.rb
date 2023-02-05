@@ -52,6 +52,14 @@ module LinesHelper
         end
     end
 
+    def text_style_for(hour)
+        if hour < (Time.now.hour + 1)
+            'text-muted'
+        else
+            'text-body-emphasis'
+        end
+    end
+
     def background_class_for(status)
         case status
         when 'on'
