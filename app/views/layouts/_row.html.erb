@@ -2,7 +2,11 @@
     <% if day.present? %>
     <% status = status_for(day, index) %>
     <div class="row mt-2 <%= border_for(index) %>">
-        <div class="rounded-3 <%= text_style_for(index) %> <%= opacity_for(index) %> <%= background_class_for(status) %>"><span><%= (index - 1) %> - <%= index %></span></div>
+        <div class="rounded-3 <%= text_style_for(index) %> <%= opacity_for(index) %> <%= background_class_for(status) %>"><span><%= (index - 1) %> - <%= index %></span>
+            <% if status == 'off' || status == 'maybe' %>
+            <i class="bi bi-lightbulb-off mx-2"></i>
+            <% end %>
+        </div>
     </div>
     <% else %>
     <div class="row mt-2 <%= border_for(index) %>">
