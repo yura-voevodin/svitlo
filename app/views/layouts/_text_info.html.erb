@@ -1,9 +1,9 @@
-<% if day.present? %>
+<% if @day.present? %>
 <p>
   На <code><%= Time.now.strftime("%H:%M") %></code>
   <span
-    class="badge rounded-pill <%= badge_background_class_for(status_for(day, Time.now.hour + 1)) %>"
-    ><%= status_text_for(day, Time.now.hour + 1) %></span
+    class="badge rounded-pill <%= badge_background_class_for(@current_status) %>"
+    ><%= @line.status_text_for(@current_status) %></span
   >
 </p>
 <% end %>
