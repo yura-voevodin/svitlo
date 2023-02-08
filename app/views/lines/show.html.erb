@@ -6,9 +6,7 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><%= link_to 'Головна', root_url %></li>
           <li class="breadcrumb-item active" aria-current="page"><%= @line.name %></li>
-          <% if @next_day.present? %>
-            <li class="breadcrumb-item"><%= link_to "#{l @next_day.date, format: "%A, %e %b"}", next_line_path(@line) %></li>
-          <% end %>
+          <li class="breadcrumb-item"><%= link_to "#{l DateTime.tomorrow, format: "%A, %e %b"}", next_line_path(@line) %></li>
         </ol>
       </nav>
     </div>

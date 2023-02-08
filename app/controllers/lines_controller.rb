@@ -10,6 +10,6 @@ class LinesController < ApplicationController
   def next
     @line = Line.find(params[:id])
     @day = Day.where(line: @line, date: Date.tomorrow).first
-    @date = @day.date
+    @date = @day.present? ? @day.date : Date.tomorrow
   end
 end
