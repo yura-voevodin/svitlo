@@ -2,6 +2,7 @@ class Line < ApplicationRecord
   has_many :days
 
   def status_for(day, hour)
+    return "" if day.nil?
     case hour
     when 1
       day.time1

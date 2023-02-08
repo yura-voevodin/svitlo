@@ -1,15 +1,15 @@
 <div class="px-2">
     <% if @day.present? %>
     <% status = @line.status_for(@day, index) %>
-    <div class="row mt-2 <%= border_for(index) %>">
-        <div class="rounded-3 <%= text_style_for(index) %> <%= opacity_for(index) %> <%= background_class_for(status) %>"><span><%= text_for(index) %></span>
+    <div class="row mt-2">
+        <div class="rounded-3 text-body-emphasis bg-opacity-50 %> <%= background_class_for(status) %>"><span><%= text_for(index) %></span>
             <% if status == 'off' || status == 'maybe' %>
             <i class="bi bi-lightbulb-off mx-2"></i>
             <% end %>
         </div>
     </div>
     <% else %>
-    <div class="row mt-2 <%= border_for(index) %>">
+    <div class="row mt-2">
         <div class="rounded-3 bg-body-secondary"><span><%= text_for(index) %></span></div>
     </div>
     <% end %>

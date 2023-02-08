@@ -6,25 +6,23 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><%= link_to 'Головна', root_url %></li>
           <li class="breadcrumb-item active" aria-current="page"><%= @line.name %></li>
-          <% if @next_day.present? %>
-            <li class="breadcrumb-item"><%= link_to "#{l @next_day.date, format: "%A, %e %b"}", next_line_path(@line) %></li>
-          <% end %>
+          <li class="breadcrumb-item"><%= link_to "#{l @date - 1.day, format: "%A, %e %b"}", line_path(@line), class: "" %></li>
         </ol>
       </nav>
     </div>
     <div class="row">
       <div class="my-2"><span class="fw-bold"><%= l @date, format: "%A, %e %b %Y" %></span></div>
     </div>
-    <div class="row"><%= render "layouts/text_info" %></div>
+    <div class="row"><p><i class="bi bi-exclamation-triangle" style="color: orange;"></i> Орієнтовний графік на завтра</p></div>
     <div class="row">
       <div class="col-6 col-md-3 col-lg-2">
         <% for index in 1..12 %>
-          <%= render "layouts/row", index: index %>
+          <%= render "layouts/next_row", index: index %>
         <% end %>
       </div>
       <div class="col-6 col-md-3 col-lg-2">
         <% for index in 13..24 %>
-          <%= render "layouts/row", index: index %>
+          <%= render "layouts/next_row", index: index %>
         <% end %>
       </div>
     </div>

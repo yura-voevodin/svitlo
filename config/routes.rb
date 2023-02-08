@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   # Pages
   get "/contacts", to: "pages#contacts"
 
-  resources :lines
+  resources :lines, only: [:show], param: :id do
+    member do
+      get :next
+    end
+  end
 end

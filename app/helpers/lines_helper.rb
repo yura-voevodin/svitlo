@@ -45,4 +45,8 @@ module LinesHelper
       ""
     end
   end
+
+  def text_for(index)
+    "#{(index - 1)} - #{index}"
+  end
 end
