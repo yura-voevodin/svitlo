@@ -14,8 +14,12 @@
       <div class="my-2"><span class="fw-bold"><%= l @date, format: "%A, %e %b %Y" %></span></div>
     </div>
     <div class="row">
-      <p><i class="bi bi-exclamation-triangle" style="color: orange;"></i> Орієнтовний графік на завтра, на основі попередніх даних Прикарпаттяоблеренго.</p>
-      <p class="text-warning">Можливі зміни в графіку</p>
+      <div class="col">
+        <div class="alert alert-warning" role="alert">
+          <h4 class="alert-heading"><i class="bi bi-exclamation-triangle"></i> Можливі зміни в графіку</h4>
+          <span class="fst-italic text-secondary-emphasis">Орієнтовний графік на завтра, на основі попередніх даних Прикарпаттяобленерго.</span>
+        </div>
+      </div>
     </div>
     <div class="row">
       <div class="col-6 col-md-3 col-lg-2">
