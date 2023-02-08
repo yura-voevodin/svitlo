@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/contacts", to: "pages#contacts"
   get "/privacy-policy", to: "pages#privacy_policy"
   get "/terms-of-service", to: "pages#terms_of_service"
+  get "/frequently-asked-questions", to: "pages#frequently_asked_questions"
 
   resources :lines, only: [:show], param: :id do
     member do
