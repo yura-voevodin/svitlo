@@ -1,0 +1,22 @@
+<table class="table table-hover table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Статус</th>
+      <th scope="col">години</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Черга вимкнена</td>
+      <td class="text-center"><%= @day.count_with_off %></td>
+    </tr>
+    <tr>
+      <td>Можливі вимкнення</td>
+      <td class="text-center"><%= @day.count_with_maybe %></td>
+    </tr>
+    <tr>
+      <td>Черга з електропостачанням</td>
+      <td class="text-center"><%= @day.count_with_on %></td>
+    </tr>
+  </tbody>
+</table>

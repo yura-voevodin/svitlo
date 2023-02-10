@@ -35,4 +35,16 @@ class Day < ApplicationRecord
   def status_for(time)
     all_times[time]
   end
+
+  def count_with_on
+    all_times.count('on')
+  end
+
+  def count_with_off
+    all_times.count('off')
+  end
+
+  def count_with_maybe
+    all_times.count('maybe')
+  end
 end
