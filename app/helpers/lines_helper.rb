@@ -1,7 +1,7 @@
 module LinesHelper
 
   def text_style_for(hour)
-    if hour < (Time.now.hour + 1)
+    if hour < Time.now.hour
       "text-muted"
     else
       "text-body-emphasis"
@@ -31,7 +31,7 @@ module LinesHelper
   end
 
   def opacity_for(hour)
-    if hour < (Time.now.hour + 1)
+    if hour < Time.now.hour
       "bg-opacity-25"
     else
       "bg-opacity-75"
@@ -39,7 +39,7 @@ module LinesHelper
   end
 
   def border_for(time)
-    if time == (Time.now.hour + 1)
+    if time == Time.now.hour
       "border border-info rounded-3"
     else
       ""
@@ -47,6 +47,6 @@ module LinesHelper
   end
 
   def text_for(index)
-    "#{(index - 1)} - #{index}"
+    "#{(index)} - #{index + 1}"
   end
 end

@@ -16,12 +16,12 @@
     <div class="row"><%= render "layouts/text_info" %></div>
     <div class="row">
       <div class="col-6 col-md-3 col-lg-2">
-        <% for index in 1..12 %>
+        <% for index in 0..11 %>
           <%= render "layouts/row", index: index %>
         <% end %>
       </div>
       <div class="col-6 col-md-3 col-lg-2">
-        <% for index in 13..24 %>
+        <% for index in 12..23 %>
           <%= render "layouts/row", index: index %>
         <% end %>
       </div>
